@@ -36,9 +36,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\NLog.dll</HintPath>
     </Reference>
-    <Reference Include="QuantBox.CSharp2CTP, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="QuantBox.CSharp2CTP, Version=2.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\SmartQuant Ltd\OpenQuant\Bin\QuantBox.CSharp2CTP.dll</HintPath>
+      <HintPath>..\..\bin\QuantBox.CSharp2CTP.dll</HintPath>
     </Reference>
     <Reference Include="SmartQuant, Version=1.0.4984.19754, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
