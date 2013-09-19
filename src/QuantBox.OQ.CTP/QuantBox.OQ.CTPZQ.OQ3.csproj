@@ -106,9 +106,9 @@
     <None Include="Properties\DataSources\ServerItem.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuantBox.Helper.CTP\QuantBox.Helper.CTPZQ.Net35.csproj">
+    <ProjectReference Include="..\QuantBox.Helper.CTP\QuantBox.Helper.CTPZQ.Net40.csproj">
       <Project>{5caeb588-ba0f-4313-8b78-5101e97d695a}</Project>
-      <Name>QuantBox.Helper.CTPZQ.Net35</Name>
+      <Name>QuantBox.Helper.CTPZQ.Net40</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
