@@ -397,6 +397,13 @@ namespace QuantBox.OQ.CTPZQ
                 {
                     _OrderRef2Order.Add(string.Format("{0}:{1}:{2}", _RspUserLogin.FrontID, _RspUserLogin.SessionID, nRet), order as SingleOrder);
                 }
+                else // 对于引用小于0,表示插入报单出现问题,可能是网络问题或者发生流控
+                {
+                    string msg = errorID2Msg(nRet);
+                    SingleOrder so = order as SingleOrder;
+                    so.Text = string.Format("{0}|{1}", so.Text, msg);
+                    EmitRejected(order as SingleOrder, msg);
+                }
             }
         }
         #endregion
@@ -748,5 +755,29 @@ namespace QuantBox.OQ.CTPZQ
             }
         }
         #endregion
+
+        private string errorID2Msg(int id)
+        {
+            string msg;
+            switch(id)
+            {
+                case 0:
+                    msg = "成功";
+                    break;
+                case -1:
+                    msg = "网络连接失败";
+                    break;
+                case -2:
+                    msg = "未处理请求超过许可数";
+                    break;
+                case -3:
+                    msg = "每秒发送请求数超过许可数";
+                    break;
+                default:
+                    msg = string.Format("报单引用:{0}",id);
+                    break;
+            }
+            return msg;
+        }
     }
 }
