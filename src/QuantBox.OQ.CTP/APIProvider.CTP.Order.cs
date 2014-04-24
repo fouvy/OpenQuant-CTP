@@ -401,6 +401,20 @@ namespace QuantBox.OQ.CTPZQ
                 {
                     string msg = errorID2Msg(nRet);
                     SingleOrder so = order as SingleOrder;
+                    switch (nRet)
+                    {
+                        case -1://网络掉线
+                            so.OrdRejReason = 5; // unknown order
+                            break;
+                        case -2://未处理请求超过许可数
+                            so.OrdRejReason = 12; // Surveillance Option
+                            break;
+                        case -3://流控
+                            so.OrdRejReason = 3; //  Order exceeds limit 
+                            break;
+                        default:
+                            break;
+                    }
                     so.Text = string.Format("{0}|{1}", so.Text, msg);
                     EmitRejected(order as SingleOrder, msg);
                 }
