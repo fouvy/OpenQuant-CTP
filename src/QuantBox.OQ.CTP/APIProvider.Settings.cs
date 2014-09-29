@@ -223,7 +223,7 @@ namespace QuantBox.OQ.CTPZQ
             serversFile = string.Format(@"{0}\{1}.Servers.xml", Framework.Installation.IniDir, this.Name);
             brokersFile = string.Format(@"{0}\{1}.Brokers.xml", Framework.Installation.IniDir, this.Name);
 
-            ApiTempPath = Framework.Installation.TempDir.FullName;
+            ApiTempPath = System.IO.Path.GetTempPath();
             ResumeType = THOST_TE_RESUME_TYPE.THOST_TERT_QUICK;
             HedgeFlagType = TThostFtdcHedgeFlagType.Speculation;
             SwitchMakertOrderToLimitOrder = false;
