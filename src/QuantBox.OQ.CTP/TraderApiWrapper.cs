@@ -32,7 +32,7 @@ namespace QuantBox.OQ.CTP
 
         public void Connect(ServerItem server, AccountItem account,THOST_TE_RESUME_TYPE resumeType)
         {
-            tempPath = Framework.Installation.TempDir.FullName + Path.DirectorySeparatorChar + server.BrokerID + Path.DirectorySeparatorChar + account.InvestorId;
+            tempPath = System.IO.Path.GetTempPath() + Path.DirectorySeparatorChar + server.BrokerID + Path.DirectorySeparatorChar + account.InvestorId;
             Directory.CreateDirectory(tempPath);
             ResumeType = resumeType;
 
